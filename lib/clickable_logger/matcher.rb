@@ -2,12 +2,12 @@
 
 module ClickableLogger
   class Matcher
-    def match?(msg, config)
-      raise NotImplementedError
+    def match?(_msg)
+      false
     end
 
-    def process(msg, config)
-      raise NotImplementedError
+    def process(msg, _config)
+      msg
     end
   end
 end

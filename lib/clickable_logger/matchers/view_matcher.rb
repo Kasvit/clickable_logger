@@ -3,28 +3,19 @@
 module ClickableLogger
   module Matchers
     class ViewMatcher < Matcher
-      VIEW_REGEX = /(Rendering|Rendered)\s+(layout\s+)?(\S+\.[a-zA-Z0-9._]+)/.freeze
+      VIEW_REGEX = /(?:Rendering|Rendered)\s+(?:layout\s+)?(?<file>\S+?\.[^\s]+)/.freeze
 
       def match?(msg)
         msg =~ VIEW_REGEX
       end
 
-      def process(msg, config)
-        return msg if msg.include?("#{config.editor}://file") # Skip already processed messages
-
-        if msg =~ VIEW_REGEX
-          file_path = ::Regexp.last_match(3)
-          return msg if file_path.nil? # Guard against nil
-
-          full_path = config.code_path.find { |f| f.end_with?(file_path) }
-          if full_path
-            url = "#{config.editor}://file#{full_path}"
-            hyperlink = url.gsub(Rails.root.to_s, ".")
-            msg = msg.gsub(file_path, hyperlink)
-          end
+      def process(msg)
+        msg.gsub(VIEW_REGEX) do |match|
+          file = Regexp.last_match[:file]
+          # all views are in <controller>/<action>.html.erb
+          full_path = file.include?("/") ? ClickableLogger.code_path.find { |path| path.end_with?(file) } : nil
+          full_path ? match.sub(file, full_path) : match
         end
-
-        msg
       end
     end
   end

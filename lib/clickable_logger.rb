@@ -1,33 +1,20 @@
-# frozen_string_literal: true
-
-require "rails"
-require "active_support/all"
-require "clickable_logger/engine"
-require "clickable_logger/configuration"
-require_relative "clickable_logger/matcher" # Load the base Matcher class
-
-# Dynamically load all matchers
-Dir.glob(File.join(__dir__, "clickable_logger", "matchers", "*.rb")).sort.each do |file|
-  require file
-end
-require "clickable_logger/formatter"
+require "clickable_logger/version"
 require "clickable_logger/railtie"
+require "clickable_logger/matcher"
+require "clickable_logger/matchers/view_matcher"
+require "clickable_logger/formatter"
 
 module ClickableLogger
-  class << self
-    attr_writer :configuration
+  # this will be set by the railtie
+  mattr_accessor :code_path # Rails.root/app/**/*.*
 
-    def configuration
-      @configuration ||= Configuration.new.tap do |config|
-        config.matchers = [
-          ClickableLogger::Matchers::CodeReferenceMatcher.new,
-          ClickableLogger::Matchers::ViewMatcher.new
-        ]
-      end
-    end
+  mattr_accessor :matchers
+  @@matchers = [
+    Matchers::ViewMatcher.new
+  ]
 
-    def configure
-      yield(configuration)
-    end
+  # for the future
+  def self.configure
+    yield self
   end
 end

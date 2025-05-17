@@ -10,3 +10,5 @@
 .vscode/
 # rspec failure tracking
 .rspec_status
+
+clickable_logger-*.gem

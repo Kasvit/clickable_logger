@@ -1,0 +1,831 @@
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Dummy'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-15 20:57:56.315580', '2025-05-15 20:57:56.315581') RETURNING "key" /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Migrating to CreateUsers (20250515205734)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Dummy'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250515205734') RETURNING "version" /*application='Dummy'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Dummy'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Started GET "/" for ::1 at 2025-05-15 23:58:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 6.0ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-15 23:58:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/" for ::1 at 2025-05-15 23:59:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 6.3ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-15 23:59:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Processing by UsersController#index as HTML
+Completed 200 OK in 40ms (Views: 6.9ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 36ms (Views: 8.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 31ms (Views: 6.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 33ms (Views: 5.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 29ms (Views: 5.5ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-16 00:09:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 6.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:09:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Processing by UsersController#index as HTML
+Completed 200 OK in 29ms (Views: 5.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 30ms (Views: 5.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 30ms (Views: 5.5ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 32ms (Views: 5.7ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 29ms (Views: 5.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by UsersController#index as HTML
+Completed 200 OK in 32ms (Views: 5.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-16 00:19:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 6.5ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:19:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:20:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 13.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:21:31 +0300
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+
+Processing by UsersController#index as HTML
+
+  Rendering layout layouts/application.html.erb
+
+  Rendering users/index.html.erb within layouts/application
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+
+  ↳ app/views/users/index.html.erb:8
+
+  Rendered users/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+
+Completed 200 OK in 31ms (Views: 6.3ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:21:32 +0300
+
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+
+Started GET "/" for ::1 at 2025-05-16 00:22:00 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 6.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:22:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:22:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:22:26 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 6.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:22:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:34:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 6.3ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:34:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:34:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:34:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 6.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:34:50 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:35:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:36:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:37:08 +0300
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.2ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 12.6ms | GC: 0.8ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 14.1ms | GC: 0.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.3ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method '*' for nil)
+Caused by: NoMethodError (undefined method '*' for nil)
+
+Information for: ActionView::Template::Error (undefined method '*' for nil):
+    16: <%= link_to "New user", new_user_path %>
+    17: 
+    18: <div>
+    19:   <%= User.some_random_code %>
+    20: </div>
+  
+app/models/user.rb:8:in 'User.some_random_code'
+app/views/users/index.html.erb:19
+
+Information for cause: NoMethodError (undefined method '*' for nil):
+  
+app/models/user.rb:8:in 'User.some_random_code'
+app/views/users/index.html.erb:19
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:37:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:37:20 +0300
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 15.6ms | GC: 1.3ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 15.8ms | GC: 1.3ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.0ms (3 queries, 0 cached) | GC: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'user' for class User)
+Caused by: NameError (undefined local variable or method 'user' for class User)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'user' for class User):
+    16: <%= link_to "New user", new_user_path %>
+    17: 
+    18: <div>
+    19:   <%= User.some_random_code %>
+    20: </div>
+  
+app/models/user.rb:8:in 'User.some_random_code'
+app/views/users/index.html.erb:19
+
+Information for cause: NameError (undefined local variable or method 'user' for class User):
+  
+app/models/user.rb:8:in 'User.some_random_code'
+app/views/users/index.html.erb:19
+Started GET "/" for ::1 at 2025-05-16 00:37:27 +0300
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.9ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 33.8ms | GC: 0.1ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 35.6ms | GC: 0.1ms)
+Completed 200 OK in 42ms (Views: 33.7ms | ActiveRecord: 3.2ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:37:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:38:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:39:11 +0300
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 13.0ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 13.7ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:39:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:39:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:39:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.4ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered users/index.html.erb within layouts/application (Duration: 10.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 12.8ms | ActiveRecord: 2.8ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:39:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:39:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.4ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 10.5ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 12.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 13.3ms | ActiveRecord: 3.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:39:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:40:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:41:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/home" for ::1 at 2025-05-16 00:58:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/" for ::1 at 2025-05-16 00:58:53 +0300
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mUser Maximum (0.5ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 12.9ms | GC: 0.3ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 17.1ms | GC: 0.3ms)
+Completed 200 OK in 42ms (Views: 14.3ms | ActiveRecord: 4.1ms (4 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:58:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/users/new" for ::1 at 2025-05-16 00:58:59 +0300
+Processing by UsersController#new as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/new.html.erb within layouts/application
+  Rendered app/views/users/_form.html.erb (Duration: 8.5ms | GC: 0.5ms)
+  Rendered app/views/users/new.html.erb within layouts/application (Duration: 10.8ms | GC: 0.5ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 12.6ms | GC: 0.5ms)
+Completed 200 OK in 36ms (Views: 13.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:58:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started POST "/users" for ::1 at 2025-05-16 00:59:04 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"name" => "sdf", "age" => "22"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:32:in 'UsersController#create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "created_at", "updated_at") VALUES ('sdf', 22, '2025-05-15 21:59:04.583907', '2025-05-15 21:59:04.583907') RETURNING "id" /*action='create',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:32:in 'UsersController#create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:32:in 'UsersController#create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 29ms (ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2025-05-16 00:59:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:57:in 'UsersController#set_user'
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/show.html.erb within layouts/application
+  Rendered app/views/users/_user.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered app/views/users/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:59:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 00:59:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/users/1" for ::1 at 2025-05-16 00:59:50 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:57:in 'UsersController#set_user'
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/show.html.erb within layouts/application
+  [1m[36mUser Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='show',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/_user.html.erb:9
+  Rendered app/views/users/_user.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered app/views/users/show.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 5.7ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 00:59:50 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 01:00:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/" for ::1 at 2025-05-16 10:55:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Maximum (2.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/_user.html.erb:9
+  Rendered app/views/users/_user.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mCACHE User Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users"[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 21.6ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 24.8ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 24.4ms | ActiveRecord: 3.3ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 10:55:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 10:55:39 +0300
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 10:55:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/cable" for ::1 at 2025-05-16 10:55:39 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2025-05-16 10:55:39 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Started GET "/" for ::1 at 2025-05-16 22:38:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Maximum (1.7ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/_user.html.erb:9
+  Rendered app/views/users/_user.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mCACHE User Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users"[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 20.1ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 23.1ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 22.9ms | ActiveRecord: 3.0ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 22:38:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/hotwire-livereload" for 127.0.0.1 at 2025-05-16 22:38:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/users/new" for ::1 at 2025-05-16 22:38:30 +0300
+Processing by UsersController#new as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/new.html.erb within layouts/application
+  Rendered app/views/users/_form.html.erb (Duration: 3.8ms | GC: 0.4ms)
+  Rendered app/views/users/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.4ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 6.0ms | GC: 0.4ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 22:38:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/cable" for 127.0.0.1 at 2025-05-16 22:38:32 +0300
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2025-05-16 22:38:32 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Started GET "/hotwire-livereload" for 127.0.0.1 at 2025-05-16 22:38:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Subscription class not found: "Turbo::StreamsChannel"
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2025-05-16 22:38:38 +0300
+Started GET "/creator/bulk_message_requests/new" for 127.0.0.1 at 2025-05-16 22:38:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/creator/bulk_message_requests/new"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:38:45 +0300
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:38:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/cable" for ::1 at 2025-05-16 22:38:45 +0300
+Started GET "/cable" [WebSocket] for ::1 at 2025-05-16 22:38:45 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:38:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Subscription class not found: "Turbo::StreamsChannel"
+Subscription class not found: "Turbo::StreamsChannel"
+Started GET "/freecreator" for ::1 at 2025-05-16 22:38:50 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/freecreator"):
+  
+Finished "/cable" [WebSocket] for ::1 at 2025-05-16 22:38:50 +0300
+Started GET "/users/new" for ::1 at 2025-05-16 22:38:59 +0300
+Processing by UsersController#new as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/new.html.erb within layouts/application
+  Rendered app/views/users/_form.html.erb (Duration: 13.7ms | GC: 0.0ms)
+  Rendered app/views/users/new.html.erb within layouts/application (Duration: 15.7ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 17.5ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 21.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/stylesheets/application.css" for ::1 at 2025-05-16 22:38:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  
+Started GET "/users/new" for ::1 at 2025-05-16 22:39:18 +0300
+Processing by UsersController#new as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/new.html.erb within layouts/application
+  Rendered app/views/users/_form.html.erb (Duration: 7.0ms | GC: 1.7ms)
+  Rendered app/views/users/new.html.erb within layouts/application (Duration: 8.0ms | GC: 1.7ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 8.9ms | GC: 1.7ms)
+Completed 200 OK in 34ms (Views: 10.2ms | ActiveRecord: 5.4ms (0 queries, 0 cached) | GC: 7.5ms)
+
+
+Started GET "/users/new" for ::1 at 2025-05-16 22:39:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#new as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/new.html.erb within layouts/application
+  Rendered app/views/users/_form.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered app/views/users/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 10.4ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:39:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/users/new" for ::1 at 2025-05-16 22:39:58 +0300
+Processing by UsersController#new as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/new.html.erb within layouts/application
+  Rendered app/views/users/_form.html.erb (Duration: 8.9ms | GC: 0.0ms)
+  Rendered app/views/users/new.html.erb within layouts/application (Duration: 16.1ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 18.9ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 22.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2025-05-16 22:39:59 +0300
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Maximum (3.2ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/_user.html.erb:9
+  Rendered app/views/users/_user.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mCACHE User Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users"[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 21.8ms | GC: 0.4ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 22.6ms | GC: 0.4ms)
+Completed 200 OK in 31ms (Views: 19.5ms | ActiveRecord: 3.8ms (5 queries, 1 cached) | GC: 0.8ms)
+
+
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:40:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:41:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/users" for ::1 at 2025-05-16 22:42:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Maximum (1.5ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/_user.html.erb:9
+  Rendered users/_user.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mCACHE User Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users"[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered users/index.html.erb within layouts/application (Duration: 19.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 21.6ms | ActiveRecord: 2.8ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:42:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/users" for ::1 at 2025-05-16 22:43:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dummy'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout app/views/layouts/application.html.erb
+  Rendering app/views/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Maximum (1.6ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/views/users/_user.html.erb:9
+  Rendered app/views/users/_user.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/models/user.rb:6:in 'User.some_random_code'
+  [1m[36mCACHE User Maximum (0.0ms)[0m  [1m[34mSELECT MAX("users"."age") FROM "users"[0m
+  ↳ app/models/user.rb:7:in 'User.some_random_code'
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*action='index',application='Dummy',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:7:in 'UsersController#some_random_helper'
+  Rendered app/views/users/index.html.erb within layouts/application (Duration: 20.0ms | GC: 0.0ms)
+  Rendered layout app/views/layouts/application.html.erb (Duration: 22.8ms | GC: 0.0ms)
+Completed 200 OK in 50ms (Views: 23.1ms | ActiveRecord: 2.7ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:43:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:44:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:45:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:46:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:47:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:48:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:49:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:50:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:51:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:52:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:53:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:54:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
+Started GET "/hotwire-livereload" for ::1 at 2025-05-16 22:55:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-livereload"):
+  
