@@ -45,6 +45,41 @@ rails g clickable_logger:install
 
 This will create a `config/initializers/clickable_logger.rb` file.
 
+## Using with non-Rails apps
+
+#### Using with Sidekiq
+
+To keep default behavior, and not to print logs to the console, we have to set `LOGGER` environment variable to any value.
+
+Example how to run: `LOGGER=true bundle exec sidekiq`
+
+With this configuration, sidekiq will print the log to the console and make it (path to views) clickable.
+
+```ruby
+# config/initializers/sidekiq.rb
+
+Sidekiq.configure_server do |config|
+  # config.redis = {
+  #   url: ENV["REDIS_URL"],
+  #   ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE },
+  # }
+
+  if Rails.env.development? && ENV["LOGGER"].present?
+    stdout_logger = ActiveSupport::TaggedLogging.new(Logger.new($stdout))
+    stdout_logger.formatter.class.send(:prepend, ClickableLogger::Formatter)
+    stdout_logger.level = Logger::DEBUG
+
+    config.logger = Rails.logger.dup
+    config.logger.level = Logger::DEBUG
+    config.logger.broadcast_to(stdout_logger)
+  end
+end
+
+# Sidekiq.configure_client do |config|
+#   # ....
+# end
+```
+
 ## Testing
 
 Run tests with:
