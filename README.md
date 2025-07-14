@@ -45,7 +45,7 @@ rails g clickable_logger:install
 
 This will create a `config/initializers/clickable_logger.rb` file.
 
-## Using with non-Rails apps
+## Advanced Usage
 
 #### Using with Sidekiq
 
@@ -78,6 +78,20 @@ end
 # Sidekiq.configure_client do |config|
 #   # ....
 # end
+```
+
+### When clickable logger doesnt work because of other gems
+
+In the initializer replace code with this one:
+
+```ruby
+if defined?(ClickableLogger)
+  Rails.application.config.after_initialize do
+    if Rails.logger&.formatter
+      Rails.logger.formatter.class.send(:prepend, ClickableLogger::Formatter)
+    end
+  end
+end
 ```
 
 ## Testing
